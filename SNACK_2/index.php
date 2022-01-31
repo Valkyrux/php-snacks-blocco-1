@@ -2,21 +2,7 @@
 $check_result = "Accesso Negato";
 
 if (!empty($_GET["name"]) && !empty($_GET["mail"]) && !empty($_GET["age"])) {
-    $control_value = 0;
-    // primo check
-    if (strlen($_GET["name"]) > 3) {
-        $control_value++;
-    }
-    // secondo check
-    if (strpos($_GET["mail"], "@") !== false && strpos($_GET["mail"], ".") !== false) {
-        $control_value++;
-    }
-    // terzo check
-    if (is_numeric($_GET["age"])) {
-        $control_value++;
-    }
-    // check dei chek
-    if ($control_value === 3) {
+    if (strlen($_GET["name"]) > 3 && strpos($_GET["mail"], "@") !== false && strpos($_GET["mail"], ".") !== false && is_numeric($_GET["age"])) {
         $check_result = "Accesso Riuscito";
     }
 }
