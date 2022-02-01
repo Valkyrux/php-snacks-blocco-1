@@ -38,19 +38,20 @@ $db = [
 </head>
 
 <body>
-    <?php
-    foreach ($db as $key => $db_element) {
-        if ($key == "teachers") {
-            foreach ($db_element as $person) {
-                echo "<div class='teachers'>" . $person["name"] . " " . $person["lastname"] . "</div>";
-            }
-        } else if ($key == "pm") {
-            foreach ($db_element as $person) {
-                echo "<div class='pm'>" . $person["name"] . " " . $person["lastname"] . "</div>";
-            }
+    <div>
+        <?php
+        foreach ($db["teachers"] as $person) {
+            echo "<div class='teachers'>" . $person["name"] . " " . $person["lastname"] . "</div>";
         }
-    }
-    ?>
+        ?>
+    </div>
+    <div>
+        <?php
+        foreach ($db["pm"] as $person) {
+            echo "<div class='pm'>" . $person["name"] . " " . $person["lastname"] . "</div>";
+        }
+        ?>
+    </div>
 </body>
 
 </html>
